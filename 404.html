@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <script>
             var urlPath = window.location.pathname;
+            if(urlPath == "/") urlPath = "/ui/";
             if(urlPath.startsWith("/.netlify/functions/comment")) {
                 document.querySelector("h1").innerText = "404 Not Found.";
             } else {
