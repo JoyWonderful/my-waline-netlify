@@ -8,8 +8,10 @@
                 document.querySelector("h1").innerText = "404 Not Found.";
             } else {
                 var newPath = "/.netlify/functions/comment" + urlPath;
-                document.querySelector("#redirect").href = newPath;
-                document.querySelector("#redirect").innerText = newPath;
+                window.addEventListener("DOMContentLoaded", ()=>{
+                    document.querySelector("#redirect").href = newPath;
+                    document.querySelector("#redirect").innerText = newPath;
+                });
                 setTimeout(()=>{window.location.pathname=newPath}, 3500);
             }
         </script>
