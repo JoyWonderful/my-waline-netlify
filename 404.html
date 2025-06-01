@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var urlPath = window.location.pathname;
+            if(urlPath.startsWith("/.netlify/functions/comment")) {
+                document.querySelector("h1").innerText = "404 Not Found.";
+            } else {
+                var newPath = "/.netlify/functions/comment" + urlPath;
+                document.querySelector("#redirect").href = newPath;
+                document.querySelector("#redirect").innerText = newPath;
+                setTimeout(()=>{window.location.pathname=newPath}, 3500);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>即将重定向至<a id="redirect"></a></h1>
+    </body>
+</html>
